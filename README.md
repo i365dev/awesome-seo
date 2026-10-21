@@ -244,6 +244,9 @@ The resources below prioritize official search-engine tools, mature open-source 
 [META SEO inspector](https://chrome.google.com/webstore/detail/meta-seo-inspector/ibkclpciafdglkjkcibmohobjkcfkaef)
 > The view tool for meta data of website.
 
+[Mode VC Backlink & WebMCP Lens](https://modevc.com/tools/webmcp-backlink-lens)
+> Open-source Chrome extension ([GitHub](https://github.com/alexbuilding/webmcp-backlink-lens)) to audit outbound dofollow vs nofollow link ratios, highlight link attributes on page, and inspect W3C WebMCP, `.well-known/mcp.json`, and `/llms.txt` agent readiness.
+
 ## Blog/Twitter
 
 [SEO Twitter List](https://twitter.com/i/lists/1341048200677842950)
