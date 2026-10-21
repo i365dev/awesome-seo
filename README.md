@@ -175,6 +175,60 @@ The resources below prioritize official search-engine tools, mature open-source 
 [Prerender](https://prerender.io/)
 > Prerender serves 100% cached versions of your web pages to search engine bots that have problems executing JavaScript.
 
+## AI Search, GEO, and Agent Accessibility
+
+**Generative Engine Optimization (GEO)** is best approached as a discoverability and measurement problem—not a replacement for SEO, nor a promise of getting cited by a model. Start with useful original content, stable URLs, accessible HTML text, descriptive titles, internal links, and structured data consistent with visible page content.
+
+### Verified guidance
+
+[Google: AI features and your website](https://developers.google.com/search/docs/appearance/ai-features)
+> Google says AI Overviews and AI Mode have no additional technical requirements beyond eligibility for Google Search. Crawlability, textual content, and accurate structured data still matter.
+
+[Google: Generative AI performance reports in Search Console](https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports)
+> Official reports for impressions and pages surfaced in generative AI features on Search and Discover; Google says the reports were available worldwide by August 31, 2026. Impressions are not visits or conversions.
+
+[OpenAI: crawler documentation](https://developers.openai.com/api/docs/bots)
+> Distinguishes `OAI-SearchBot` (ChatGPT search discovery), `GPTBot` (potential model-training crawl), and `ChatGPT-User` (certain user-triggered requests). Do not assume one robots.txt policy controls all three identically.
+
+[Anthropic: Claude crawler controls](https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler)
+> Documents distinct `Claude-SearchBot`, `ClaudeBot`, and `Claude-User` purposes and controls.
+
+[Google: robots.txt guidance](https://developers.google.com/search/docs/crawling-indexing/robots/intro)
+> Manage crawler access intentionally. Robots.txt is not authentication, an authorization mechanism, or a reliable way to keep private pages secret. Verify CDN/WAF challenges and real fetch responses separately.
+
+[WAI-ARIA Authoring Practices](https://www.w3.org/WAI/ARIA/apg/)
+> Accessible, semantically labeled buttons, forms, and navigation improve usability for people and can help browser-based agents interpret interactions. ARIA alone does not guarantee agent compatibility.
+
+### Experimental rather than required
+
+[llms.txt proposal](https://llmstxt.org/)
+> A voluntary proposal for machine-readable Markdown navigation and linked documentation. It may be useful for agent-facing technical docs, but is **not** a universally adopted search standard or a Google ranking requirement. Google explicitly says llms.txt has no positive or negative impact on Google Search visibility. Maintain it only if a specific consumer or measurable use case justifies the extra content.
+
+**Practical distinction:** *search crawlers*, *model-training crawlers*, and *user-directed browser/agent sessions* are different actors. A bot fetch is not a human referral; browser analytics generally does not measure crawler traffic. Never bypass login, privacy, abuse prevention, or payment controls to improve purported “AI friendliness.”
+
+### If your site uses Cloudflare or another CDN/WAF
+
+**robots.txt and edge security are different controls.** A crawler allowed by robots.txt can still receive a Cloudflare 403/429, challenge page, or other unusable response. Likewise, allowing a crawler through the WAF does not override its robots.txt obligations. Audit both layers rather than assuming a public page is machine-accessible.
+
+[Cloudflare: AI bot policies](https://developers.cloudflare.com/bots/additional-configurations/block-ai-bots/)
+> Cloudflare distinguishes **Search, Agent, and Training** behavior. New-domain defaults introduced September 15, 2026 keep Search allowed but restrict Training and Agent on pages with ads; mixed-purpose bots may also be blocked by training policies. Check each zone's **actual** settings; existing domains and configurations may differ.
+
+[Cloudflare: managed robots.txt](https://developers.cloudflare.com/bots/additional-configurations/managed-robots-txt/)
+> Cloudflare's Bot Preference Sync can **prepend managed rules** to an existing robots.txt, based on the zone's policies. Read the **final public** `https://your-domain.example/robots.txt`, not just the file in Git, and check for conflicts.
+
+[Cloudflare: AI Crawl Control](https://developers.cloudflare.com/ai-crawl-control/get-started/)
+> Review **AI Crawl Control → Crawlers / Directives** for request outcomes and robots policy. On Free plans, crawler recognition is primarily user-agent based; don't treat this dashboard as independently verified attribution.
+
+[Cloudflare: bot false positives](https://developers.cloudflare.com/bots/troubleshooting/false-positives/)
+> Bot Fight Mode can challenge legitimate clients and **cannot be skipped with a WAF custom rule**. Super Bot Fight Mode supports targeted Skip rules. Inspect **Security Events / Analytics** before changing protections.
+
+**Minimal audit for a public content page:**
+1. Decide whether you want **AI search discovery**, **user-directed agent access**, and/or **training** independently. For example, OpenAI documents allowing `OAI-SearchBot` for search while disallowing `GPTBot` for training.
+2. Fetch the public `/robots.txt` and sitemap over your **real CDN hostname**. Check effective policies and Cloudflare-generated directives. Ensure public article/asset-detail URLs return meaningful text and a canonical URL, without requiring login or Turnstile.
+3. Check Cloudflare **Security Events** and AI Crawl Control for actual requests from identified bots: status codes, blocked/challenged decisions, and the precise host/path. A `curl -A "OAI-SearchBot"` probe checks only the declared user agent and **does not prove** how the authentic verified crawler is treated.
+4. Resolve unintended challenges **only for known-good traffic on public read-only paths**. Do not broadly bypass protections for every user agent claiming to be a search bot; keep downloads, paid content, APIs, and write actions behind their original authorization and anti-abuse controls.
+5. Recheck after changes to DNS proxy/CDN, robots.txt, WAF, or bot settings. Record actual fetch responses rather than assuming a configuration toggle guarantees indexing or referrals.
+
 ## Chrome Plugins
 
 [SimilarWeb](https://chrome.google.com/webstore/detail/similarweb-traffic-rank-w/hoklmmgfnpapgjgcpechhaamimifchmp)
@@ -236,6 +290,39 @@ The resources below prioritize official search-engine tools, mature open-source 
 [Warrior Forum](https://www.warriorforum.com/)
 
 > If you want to recommend other good communities, please commit PR.
+
+## Analytics, Attribution, and Conversion
+
+Measure **discovery → qualified visits → meaningful product use → revenue**. Different tools answer different questions; page views, bot requests, AI citations, signups, and paid customers are not interchangeable.
+
+| Question | Practical source |
+| --- | --- |
+| Which search queries and pages receive impressions and clicks? | Search Console; Bing Webmaster Tools |
+| Is a page shown inside Google's generative AI search features? | Search Console generative AI performance reports (visibility/impressions) |
+| Which users arrived through a browser referral or tagged link? | GA4, Umami, or Mixpanel (referrer and UTM) |
+| Did visitors complete a valuable action and return? | Product-specific events, funnels, and retention |
+| Was the growth worth its cost? | Verified sales/refunds and direct operating/production costs |
+
+### Established analytics tools
+
+[Google Analytics 4: traffic acquisition](https://support.google.com/analytics/answer/12923437)
+> Analyze traffic sources, sessions, and key events. It complements Search Console; it does not replace search impression or crawler-log data.
+
+[Mixpanel: funnel analysis](https://mixpanel.com/blog/introduction-to-analytics-funnel-analysis/)
+> Established product analytics for conversion steps, usage, and retention after the visitor reaches the product.
+
+[Umami](https://docs.umami.is/)
+> Open-source web and product analytics with referrers, UTM parameters, custom events, funnels, and attribution reporting; can be self-hosted.
+
+[Umami: attribution](https://docs.umami.is/docs/attribution)
+> First-click and last-click attribution for chosen page views or events; these are reporting models, not proof of causal impact.
+
+### Measurement cautions
+
+- [OpenAI's publisher guidance](https://help.openai.com/en/articles/12627856) describes `utm_source=chatgpt.com` on ChatGPT search referral URLs. Use observed referrer/UTM together; **other AI assistants need not send the same tags**, and referrers may be missing. Do not label all direct traffic as “AI traffic.”
+- Server/CDN logs can show crawler requests, but those are **not** user sessions or citations. GSC AI impressions likewise do not establish click-through or revenue.
+- Define meaningful events per product (e.g., a verified artifact download, completed research workflow, or purchase). Deduplicate and validate events, document attribution limitations, and separate gross revenue from costs.
+- Choose analytics according to the question and existing stack; **do not install all three trackers** just because they are listed.
 
 ## Traffic Monetization
 
