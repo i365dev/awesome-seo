@@ -186,6 +186,9 @@ For SEO masters, maybe those amount of website traffic is too ordinary. However,
 [META SEO inspector](https://chrome.google.com/webstore/detail/meta-seo-inspector/ibkclpciafdglkjkcibmohobjkcfkaef)
 > The view tool for meta data of website.
 
+[Spoof Me](https://chromewebstore.google.com/detail/spoof-me/onbjkmhileedchimkcmieeiomipdljki)
+> Switch the browser's user agent, language and timezone together (desktop and mobile presets) to check how a site serves other languages and mobile vs desktop pages. Free, also on Firefox.
+
 ## Blog/Twitter
 
 [SEO Twitter List](https://twitter.com/i/lists/1341048200677842950)
