@@ -1,153 +1,56 @@
 # Contributing to awesome-seo
 
-[中文说明 / Chinese Version](#contributing-guide-chinese)
+[中文说明](#中文贡献说明)
+
+**awesome-seo is a curated reference, not a submission directory.** The maintainers prioritize editorial quality, lasting usefulness, and evidence over the number of links.
+
+## Scope and editorial policy
+
+We welcome corrections to existing entries, dead-link fixes, clear neutral descriptions, and substantial improvements to foundational SEO guidance.
+
+For **new resources**, our default choices are:
+
+1. **Official primary sources:** Documentation, diagnostic tools, and standards from search engines and recognized standards bodies.
+2. **Established open-source software:** Directly relevant to SEO, publicly licensed, actively maintained, and supported by independent use, technical review, or credible real-world adoption.
+3. **Established commercial tools:** Only well-known, widely recognized tools selected by the maintainers based on independent evidence. Commercial listings are not an open submission category.
+4. **Independent research:** Reproducible methods or reliable third-party corroboration, not just a large claimed sample size.
+
+Meeting minimum criteria does not guarantee inclusion. Star counts, downloads, tool directories, AI-generated descriptions, and an author's own claims are not substitutes for independent evidence. There is no fixed popularity threshold.
+
+## Submissions we do not accept
+
+- Unsolicited self-promotion, vendor advertisements, link-building campaigns, affiliate/referral links, or requests for backlinks—even for free or open-source products.
+- Newly launched, little-known, or unverified tools submitted primarily for exposure.
+- Duplicate or near-duplicate solutions without a compelling, independently demonstrated reason for inclusion.
+- Promotional copy, unverifiable performance claims, and fabricated reviews or endorsements.
+- Bulk submissions or PRs that add links without improving readers' understanding.
+
+We may close such submissions **without requesting changes**. A disclosure is appreciated, but does not confer eligibility.
+
+## Before opening a PR
+
+- Check that the proposal adds clear value beyond resources already listed.
+- Confirm canonical URLs and neutral, one-sentence descriptions.
+- For a new resource, explain what problem it solves, show direct technical evidence, and cite independent validation. Prefer first-hand testing by someone not affiliated with the vendor.
+- State all affiliations and conflicts of interest.
+- Update both `README.md` and `README_CN.md` when adding a new entry. Avoid unrelated reformatting.
+- Do not submit a new listing only to secure a backlink.
+
+The maintainers retain full editorial discretion. If you have a genuinely significant new resource but no independent evidence yet, wait until it has a proven track record; do not open a speculative promotional PR.
 
 ---
 
-## Contributing Guide (English)
+## 中文贡献说明
 
-Thank you for your interest in contributing to **awesome-seo**! This is a **curated list** — quality and relevance over quantity. Please read these guidelines carefully before opening a Pull Request.
+**awesome-seo 是精选参考资料，不是免费提交产品的目录。** 我们重视长期价值、独立证据和内容质量，而不是收录数量。
 
-### What This List Is
+欢迎修复失效链接、纠正错误、优化中立描述，以及完善 SEO 基础知识。新增资源原则上仅考虑：
 
-`awesome-seo` is a hand-curated collection of high-quality SEO resources: tutorials, books, articles, tools, communities, and related content. Every entry should provide genuine, lasting value to someone learning or practicing SEO.
+1. 搜索引擎和标准组织发布的官方文档、协议与诊断工具。
+2. 与 SEO 直接相关、许可证明确、持续维护且有独立使用或技术验证的成熟开源项目。
+3. 维护者基于独立证据主动筛选的行业公认商业工具。
+4. 方法可复现或结论得到可信第三方验证的研究资料。
 
-### Inclusion Criteria
+**不接受未经邀请的厂商广告、个人产品自荐、外链推广、返佣链接、缺乏独立证据的新项目。** 即便免费或开源，也不因为提交者自述、Star 数量或 AI 写出的介绍自动满足收录标准。
 
-#### Open-Source Projects (Preferred)
-Open-source submissions are **strongly preferred** and held to the following standard:
-
-- Must provide a public **GitHub repository link**.
-- Must have a recognizable **open-source license** (MIT, Apache 2.0, GPL, etc.).
-- The project must be demonstrably related to SEO (crawling, analysis, rank tracking, schema, sitemap generation, etc.).
-- Meeting these minimum requirements **does not guarantee inclusion**. This is a curated list, not a project directory.
-- The maintainer may consider evidence of **real-world adoption, sustained maintenance, community use, independent discussion, and established value**. Very new or minimally adopted projects may be declined until stronger evidence exists.
-- GitHub stars/forks may be considered as one signal of adoption, but there is **no fixed star threshold** and stars alone are not sufficient.
-
-#### SaaS / Commercial Tools
-SaaS tools are accepted **only** if they meet **all** of the following criteria:
-
-- **Industry recognition**: The tool must be well-known and have strong, independent third-party endorsement.
-- **Third-party references**: Provide **at least 2 independent third-party reference links**, such as:
-  - Industry media reviews (e.g., Search Engine Journal, Moz Blog, Backlinko).
-  - Reputable directory or review platforms (e.g., G2, Capterra, Product Hunt with significant traction).
-  - High-quality community discussions (e.g., a Reddit thread with substantial engagement).
-- **Transparency**: Must provide a link to the **pricing page** and **privacy policy**.
-- **Free tier / trial**: State whether a free tier or trial is available.
-
-### What Will Be Rejected
-
-The following submissions will be **closed without merging**:
-
-- ❌ Link-only PRs with no description or context.
-- ❌ Marketing language in the description ("best", "#1", "all-in-one", "AI magic", "revolutionary", etc.).
-- ❌ Self-promotions of obscure or newly launched products without third-party validation.
-- ❌ Duplicate submissions of the same product, or closely related products from the same company.
-- ❌ Multiple PRs from the same contributor adding different products (spam pattern).
-- ❌ Off-topic submissions weakly related to SEO.
-- ❌ Any link containing an affiliate/referral code.
-
-### Description Style
-
-Entries added to the README must follow the existing style:
-
-- **One neutral sentence** describing what the tool/resource does.
-- **No marketing superlatives** — avoid "best", "#1", "all-in-one", "powerful", "amazing", "AI-powered magic", etc.
-- Write as if you are explaining the tool to a peer, not selling it.
-
-**Good example:**
-> Open-source rank tracker that queries Google Search Console data and stores results in a self-hosted database.
-
-**Bad example:**
-> The best AI-powered all-in-one SEO tool that will skyrocket your rankings overnight!
-
-### Before You Submit — Checklist
-
-- [ ] Search the README to confirm no similar entry already exists.
-- [ ] Check open and closed PRs to avoid duplicate submissions.
-- [ ] Verify the link is live and resolves correctly.
-- [ ] Confirm the description is neutral (no marketing language).
-- [ ] For open-source: confirm the GitHub repo is public and the license is visible.
-- [ ] For open-source: provide evidence of maturity/adoption when the project is new or not widely known.
-- [ ] For SaaS: confirm you have at least 2 independent third-party references.
-
-### Contribution Workflow
-
-1. **Fork** this repository.
-2. Create a **new branch** from `main` (e.g., `add-tool-xyz`).
-3. Edit `README.md` (and `README_CN.md` if applicable) following the existing format.
-4. Open a **Pull Request** using the provided PR template and fill in **all required fields**.
-5. The maintainer will review your PR. PRs that do not meet the standards above will be closed.
-
----
-
-## Contributing Guide (Chinese)
-
-<a name="contributing-guide-chinese"></a>
-
-感谢您对 **awesome-seo** 的贡献兴趣！本项目是一个**强精选**列表——质量和相关性优先于数量。在提交 Pull Request 之前，请仔细阅读以下指南。
-
-### 关于本列表
-
-`awesome-seo` 是一个手工策划的高质量 SEO 资源合集，包括教程、书籍、文章、工具、社区等内容。每一个条目都应该为学习或实践 SEO 的人提供真正持久的价值。
-
-### 收录标准
-
-#### 开源项目（优先收录）
-**强烈推荐**开源项目，需满足以下条件：
-
-- 必须提供公开的 **GitHub 仓库链接**。
-- 必须有明确的**开源许可证**（MIT、Apache 2.0、GPL 等）。
-- 项目必须与 SEO 明确相关（爬虫、分析、排名追踪、Schema、Sitemap 生成等）。
-- 满足以上最低条件**并不代表一定会被收录**。本项目是精选列表，不是项目目录。
-- 维护者会综合考虑**真实使用、持续维护、社区采用、独立讨论和长期价值**。刚发布或采用度很低的项目，可能会在出现更充分的外部验证后再考虑收录。
-- GitHub stars/forks 可以作为采用度信号之一，但**不会设置固定 star 门槛**，star 数本身也不足以决定收录。
-
-#### SaaS / 商业工具
-SaaS 工具**仅在满足以下所有条件**时才予以收录：
-
-- **行业知名度**：工具必须知名，并有强力的独立第三方背书。
-- **第三方参考**：提供**至少 2 个独立的第三方参考链接**，例如：
-  - 行业媒体评测（如 Search Engine Journal、Moz Blog、Backlinko）。
-  - 权威目录或评测平台（如 G2、Capterra、有大量关注的 Product Hunt 页面）。
-  - 高质量社区讨论（如有大量参与的 Reddit 帖子）。
-- **透明度**：必须提供**定价页面**和**隐私政策**链接。
-- **免费层/试用**：说明是否有免费层或试用期。
-
-### 会被拒绝的情况
-
-以下提交将被**直接关闭**：
-
-- ❌ 无描述或无背景的纯链接 PR。
-- ❌ 描述中含有营销话术（"最好的"、"第一"、"全能型"、"AI 魔法"、"颠覆性"等）。
-- ❌ 没有第三方验证的自荐不知名产品或新上线产品。
-- ❌ 重复提交同一产品，或同一公司的关联产品。
-- ❌ 同一贡献者提交多个不同产品的 PR（刷屏行为）。
-- ❌ 与 SEO 主题弱相关或离题的提交。
-- ❌ 任何包含 affiliate/referral 代码的链接。
-
-### 描述风格要求
-
-合并到 README 的条目必须遵循现有风格：
-
-- **一句中立描述**，说明工具/资源的功能。
-- **不使用营销用语**——避免"最好"、"第一"、"全能"、"强大"、"令人惊叹"、"AI 赋能"等表述。
-- 行文方式如同向同行介绍工具，而非推销产品。
-
-### 提交前自查清单
-
-- [ ] 在 README 中搜索确认没有类似条目已存在。
-- [ ] 检查已开放和已关闭的 PR，避免重复提交。
-- [ ] 确认链接可访问且正确跳转。
-- [ ] 确认描述为中立表述（无营销语言）。
-- [ ] 开源项目：确认 GitHub 仓库公开且 License 可见。
-- [ ] 开源项目：如果项目较新或知名度较低，请提供成熟度/采用度的外部证据。
-- [ ] SaaS 工具：确认您有至少 2 个独立的第三方参考链接。
-
-### 贡献流程
-
-1. **Fork** 本仓库。
-2. 从 `main` 分支创建**新分支**（例如 `add-tool-xyz`）。
-3. 按照现有格式编辑 `README.md`（如适用也请更新 `README_CN.md`）。
-4. 使用提供的 PR 模板提交 **Pull Request**，并填写**所有必填字段**。
-5. 维护者会审核您的 PR。不符合上述标准的 PR 将被关闭。
+提交前应核对已有内容、提供准确链接和一句中立描述；新增资源请说明具体使用场景及独立验证，并披露利益关系。新增条目原则上同步修改英文和中文 README。维护者可以直接关闭不符合收录原则的 PR，无须逐一要求修改。
