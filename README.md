@@ -41,9 +41,6 @@ The following older mind map is a broad reference; check current [Google Search 
 [The Beginner's Guide to SEO](https://moz.com/beginners-guide-to-seo)
 > SEO beginners tutorial on the Moz web, helps you learn SEO systematically.
 
-[The Authority Site System 3.0](https://www.authorityhacker.com/system/)
-> This course is about how to build an authority site ( Niche Site) from scratch and make money from it. SEO is only a part of it, it also includes Affiliates, Paid-advertising etc. (The course is pretty expensive, and I haven't started it yet)
-
 [A Technical SEO’s Guide to Crawl Budget Optimization](https://prerender.io/resources/free-downloads/white-papers/crawl-budget-guide/)
 > A comprehensive guide explaining the importance of crawl budgets in managing indexing for search engines, how it impacts website traffic, and provides optimization tips to improve online visibility and SEO results.
 
@@ -319,7 +316,7 @@ Measure **discovery → qualified visits → meaningful product use → revenue*
 
 ### Measurement cautions
 
-- [OpenAI's publisher guidance](https://help.openai.com/en/articles/12627856) describes `utm_source=chatgpt.com` on ChatGPT search referral URLs. Use observed referrer/UTM together; **other AI assistants need not send the same tags**, and referrers may be missing. Do not label all direct traffic as “AI traffic.”
+- For ChatGPT-originated visits, inspect observed referrers and UTM parameters (for example, `utm_source=chatgpt.com` when present). **Do not assume all ChatGPT or other AI referrals are tagged**, or classify all direct traffic as AI-driven. [OpenAI's current crawler documentation](https://developers.openai.com/api/docs/bots) describes bot discovery—not how every browser referral is attributed.
 - Server/CDN logs can show crawler requests, but those are **not** user sessions or citations. GSC AI impressions likewise do not establish click-through or revenue.
 - Define meaningful events per product (e.g., a verified artifact download, completed research workflow, or purchase). Deduplicate and validate events, document attribution limitations, and separate gross revenue from costs.
 - Choose analytics according to the question and existing stack; **do not install all three trackers** just because they are listed.
