@@ -12,6 +12,22 @@ A carefully curated collection of SEO guides, tools, and references for people w
 
 ## Basic Concept
 
+### The SEO improvement loop
+
+```mermaid
+flowchart TD
+    intent["Search intent and user needs"] --> content["Useful, distinctive content"]
+    content --> access["Crawlable and indexable pages"]
+    access --> visibility["Potential search visibility and visits"]
+    visibility --> evidence["Measure with Search Console and site analytics"]
+    evidence --> improve["Fix issues and improve content"]
+    improve --> content
+```
+
+*Indexable does not mean ranked: visibility depends on relevance, competition, and search-engine decisions.* The loop is about publishing helpful pages, observing results, and improving them—not producing links or content for their own sake.
+
+The following older mind map is a broad reference; check current [Google Search documentation](https://developers.google.com/search/docs) for technical guidance.
+
 ![What is SEO](https://img.bmpi.dev/4351f5c8-cc00-d2a8-a75f-9010c9367893.png)
 
 ## Tutorials
@@ -223,7 +239,21 @@ The resources below prioritize official search-engine tools, mature open-source 
 
 ## Traffic Monetization
 
-Organic traffic is an input, not a business model. Evaluate advertising, affiliates, and paid products against actual audience needs, conversion rates, revenue per visitor, and operating costs. Benchmarks vary greatly by niche and geography; test monetization with your own data rather than treating historical CPM/CPC figures as universal estimates.
+Organic search traffic creates opportunities, not revenue by itself. Common models include advertising, affiliate commissions, and selling products or memberships.
+
+```mermaid
+flowchart TB
+    pv["Organic page views"] --> ads["Display advertising"]
+    pv --> affiliate["Affiliate commissions"]
+    pv --> products["Products and memberships"]
+    ads --> revenue["Total revenue"]
+    affiliate --> revenue
+    products --> revenue
+    revenue --> rpm["Blended RPM"]
+    pv --> rpm
+```
+
+**Blended RPM = total revenue ÷ page views × 1,000.** This measures revenue per 1,000 page views across the channels shown; it is different from an ad platform's *ad-only* RPM. Track conversions and operating costs separately to understand profitability. Results vary by niche, geography, audience, and product fit—historical CPM/CPC benchmarks are not universal assumptions.
 
 ## Other
 
