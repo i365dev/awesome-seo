@@ -1,56 +1,12 @@
 # awesome-seo
 
-[中文/Chinese](./README_CN.md)
+[简体中文](./README_CN.md)
 
-The checklist has been being sorted out since I systematically studied Google SEO in 2019.
-The checklist would be updated from time to time. 
-Meanwhile, welcome to check in PRs, and share the great links about SEO.
+A carefully curated collection of SEO guides, tools, and references for people who build and operate websites. Started as personal SEO notes in 2019; now maintained as a public knowledge resource by [i365](https://www.i365.tech/).
 
-There are differences between Baidu SEO and Google SEO. If you have learned the Google SEO, you would understand how to learn Baidu SEO.
+**New to SEO?** Begin with [Google Search Essentials](https://developers.google.com/search/docs/essentials) and the [official SEO Starter Guide](https://developers.google.com/search/docs/fundamentals/seo-starter-guide). Use Search Console to measure search visibility before choosing tools.
 
-> Anything you want to discuss, you can join me on this [slack channel](https://slack-redirect.i365.tech/).
-
-<details>
-  <summary>SEO, Why Do You Need It?</summary>
-
-On the Internet, website traffic can be turned into money. If you have mastered certain SEO techniques, you will have the advantages as following:  
-  - Increase website traffic, then monetize traffic, and build your passive income.
-  - If you have individual product, and the product need to be marketed and promoted. SEO can help you get free and steadily growing traffic.
-  - SEO industry covers a wide range of fields. You can study some new technologies in researching SEO process.
-</details>
-
-<details>
-  <summary>My SEO Experience</summary>
-
-  ![](https://img.bmpi.dev/5494437c-08e0-0d08-5f91-6bdb4fcdece6.png)
-
-This is the traffic site I made. I earned almost $1500 US in advertising revenue.
-For SEO masters, maybe those amount of website traffic is too ordinary. However, for personal developer, these skills are worthy for long-term investment.
-</details>
-
-<details>
-  <summary>WeChat/Telegram/Discord</summary>
-
-![](https://img.bmpi.dev/755b406f-43ae-e382-e13c-547116d3e7d5.png)
-
-[Telegram](https://t.me/bmpi_group)
-
-[Discord](https://discord.gg/S9mzJfqfKD)
-</details>
-
-<details>
-  <summary>SEO Resource Pack</summary>
-  
-  Join the Telegraph/WeChat group to receive this gift package.
-  
-  ![](https://img.bmpi.dev/4524f561-8feb-4fd3-852a-603dacc9b5c0.png)
-</details>
-
-<details>
-  <summary>Stargazers over time</summary>
-
-  [![Stargazers over time](https://starchart.cc/madawei2699/awesome-seo.svg)](https://starchart.cc/madawei2699/awesome-seo)
-</details>
+**Curation policy:** This is a reference list, not a product directory, advertising channel, or backlink placement service. Unsolicited vendor and self-promotional listings are not accepted. See [CONTRIBUTING.md](./CONTRIBUTING.md).
 
 ---
 
@@ -60,8 +16,11 @@ For SEO masters, maybe those amount of website traffic is too ordinary. However,
 
 ## Tutorials
 
-[Google Webmaster Guidelines](https://developers.google.com/search/docs/advanced/guidelines/overview?ref_topic=9428048&visit_id=637455340508159753-1629045620&rd=1)
-> Webmaster Guidelines, must-read for SEO.
+[Google Search Essentials](https://developers.google.com/search/docs/essentials)
+> Google's baseline technical requirements, spam policies, and search best practices.
+
+[Google SEO Starter Guide](https://developers.google.com/search/docs/fundamentals/seo-starter-guide)
+> Google's introduction to making content accessible, useful, and discoverable through Search.
 
 [The Beginner's Guide to SEO](https://moz.com/beginners-guide-to-seo)
 > SEO beginners tutorial on the Moz web, helps you learn SEO systematically.
@@ -120,6 +79,41 @@ For SEO masters, maybe those amount of website traffic is too ordinary. However,
 
 ## Tools
 
+The resources below prioritize official search-engine tools, mature open-source projects, and established industry tools—not new vendor listings.
+
+### Search performance and indexing
+
+[Google Search Console](https://search.google.com/search-console/about)
+> Google's first-party tool for search queries, page performance, indexing, and crawl diagnostics.
+
+[Search Console API](https://developers.google.com/webmaster-tools/)
+> Query Google Search data, manage sitemaps, and inspect URL indexing status programmatically; requires property access.
+
+[Bing Webmaster Tools](https://www.bing.com/webmasters/about)
+> Microsoft's first-party search performance, indexing, crawling, and keyword diagnostics.
+
+[Google Trends](https://trends.google.com/trends/explore)
+> Compare relative search interest and trends across topics, regions, and time; not a source of absolute search volume.
+
+### Technical auditing and structured data
+
+[Google Rich Results Test](https://search.google.com/test/rich-results)
+> Google's official test for structured data eligible for rich-result features in Google Search.
+
+[Schema Markup Validator](https://validator.schema.org/)
+> Validate Schema.org JSON-LD, RDFa, and Microdata independently of Google-specific rich-result eligibility.
+
+[Google Lighthouse](https://github.com/GoogleChrome/lighthouse)
+> Google's open-source audits for page performance, accessibility, SEO, and best practices.
+
+[Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci)
+> Run Lighthouse audits and regression assertions in continuous integration.
+
+[Screaming Frog SEO Spider](https://www.screamingfrog.co.uk/seo-spider/)
+> Established desktop crawler for technical SEO, including broken links, redirects, and metadata; the free version crawls up to 500 URLs per run.
+
+### Other established tools
+
 [advertools](https://github.com/eliasdabbas/advertools)
 > Python library providing a comprehensive set of SEO and digital marketing tools.
 
@@ -164,9 +158,6 @@ For SEO masters, maybe those amount of website traffic is too ordinary. However,
 
 [Prerender](https://prerender.io/)
 > Prerender serves 100% cached versions of your web pages to search engine bots that have problems executing JavaScript.
-
-[GEO/AEO Tracker](https://github.com/danishashko/geo-aeo-tracker)
-> Open-source, local-first AI search visibility dashboard. Track brand mentions across ChatGPT, Perplexity, Gemini, Copilot, Google AI Overview, and Grok. BYOK, self-hosted, $0/month, with visibility scoring, citation analysis, and competitor battlecards.
 
 ## Chrome Plugins
 
@@ -232,12 +223,7 @@ For SEO masters, maybe those amount of website traffic is too ordinary. However,
 
 ## Traffic Monetization
 
-When there is a certain amount of SEO traffic(such as monthly PV reaching 10,000), how to monetize SEO traffic becomes a more important topic. Gernerally speaking, we can integrate [Internet Advertising](https://www.bmpi.dev/dev/what-is-internet-advertising/) through advertising platforms such as Google Adsense.
-This CPM/CPC is generally not high. The Advertising CPM/CPC depends on the content/region of website. The CPM/CPC range of different content ads is between $0.3-$2.0/$0.2-$15.
-
-![](https://img.bmpi.dev/91bc8569-0fdc-ea98-478e-33d63205f340.png)
-
-The purpose of the traffic site is to improve [RPM](https://tg.bmpi.dev/web_cpc/420.html). In addition to advertising, the website can also access Affiliate and sell products(members, courses) to increase RPM.
+Organic traffic is an input, not a business model. Evaluate advertising, affiliates, and paid products against actual audience needs, conversion rates, revenue per visitor, and operating costs. Benchmarks vary greatly by niche and geography; test monetization with your own data rather than treating historical CPM/CPC figures as universal estimates.
 
 ## Other
 
@@ -250,10 +236,6 @@ The purpose of the traffic site is to improve [RPM](https://tg.bmpi.dev/web_cpc/
 
 ---
 
-## About the Author
+## Maintainers
 
-This project is maintained by the creator of **MyInvestPilot** —
-a systematic investment assistance platform focused on
-rule-based, long-term investing and transparent strategy research.
-
-🔗 https://www.myinvestpilot.com
+Maintained by [i365](https://www.i365.tech/), an agent-native digital product studio. This list is an independent reference collection; inclusion does not imply endorsement, partnership, or payment.
