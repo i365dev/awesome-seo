@@ -12,6 +12,22 @@
 
 ## 基础概念
 
+### SEO 的持续改进闭环
+
+```mermaid
+flowchart TD
+    intent["用户需求与搜索意图"] --> content["有价值、有差异的内容"]
+    content --> access["可抓取、可索引的页面"]
+    access --> visibility["有机会获得搜索曝光与访问"]
+    visibility --> evidence["通过 Search Console 与站点分析衡量"]
+    evidence --> improve["修复问题，改进内容"]
+    improve --> content
+```
+
+*可索引不等于一定有排名或流量。* SEO 的核心是满足用户需求、观察实际效果、持续改进，而不只是不断增加页面数量。
+
+下面保留了早期整理的 SEO 思维导图，适合了解涉及的领域；涉及技术细节时请以最新的 [Google 搜索文档](https://developers.google.com/search/docs) 为准。
+
 [![什么是SEO](https://img.bmpi.dev/227e91cc-a2a8-942e-19fe-8246d9a7abbd.png)](https://www.bmpi.dev/dev/what-is-seo/)
 
 ## 教程
@@ -251,7 +267,21 @@
 
 ## 流量变现
 
-搜索流量本身不等于收入。可以通过广告、联盟营销或付费产品尝试变现，但应结合真实用户需求、转化率、单访客收入和运营成本评估。不同垂直领域、地区和流量质量之间差异很大，不建议直接套用旧的 CPM/CPC 数据。
+搜索流量本身不会直接产生收入。常见方式包括展示广告、联盟营销，以及销售自己的产品或会员服务。
+
+```mermaid
+flowchart TB
+    pv["搜索带来的页面浏览量（PV）"] --> ads["展示广告"]
+    pv --> affiliate["联盟推广佣金"]
+    pv --> products["产品与会员收入"]
+    ads --> revenue["总收入"]
+    affiliate --> revenue
+    products --> revenue
+    revenue --> rpm["综合 RPM"]
+    pv --> rpm
+```
+
+**综合 RPM = 总收入 ÷ 页面浏览量（PV）× 1,000。** 它表示每千次页面浏览带来的全部渠道收入，不等同于广告平台只统计广告收入的 RPM。还要单独衡量转化率与运营成本，才能判断是否真正盈利。不同领域、地区和用户需求差异很大，不应直接套用旧的 CPM/CPC 区间。
 
 ## 其他
 
