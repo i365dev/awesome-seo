@@ -44,10 +44,6 @@ flowchart TD
 
 > Moz的SEO新手教程，可以系统性学习SEO。
 
-[The Authority Site System 3.0](https://www.authorityhacker.com/system/)
-
-> 这个课程是关于如何从零构建权威站（英文Niche站）并变现的，SEO只是其中一部分，还包括Affiliate，付费广告等。（课程费用比较贵，我还没开始学）
-
 ## 图书
 
 [SEO艺术](https://book.douban.com/subject/34890213/)
@@ -347,7 +343,7 @@ flowchart TD
 
 ### 衡量时必须避免的误区
 
-- [OpenAI 对网站发布者的说明](https://help.openai.com/en/articles/12627856) 提到 ChatGPT 搜索引荐链接可带 `utm_source=chatgpt.com`。应结合实际 Referrer 和 UTM；**其他 AI 助手不一定使用相同标签**，部分访问也可能丢失来源。不能把全部 Direct 流量都算成 AI 流量。
+- 衡量来自 ChatGPT 的访问时，应检查实际 Referrer 与 UTM（例如存在时的 `utm_source=chatgpt.com`）。**不能假设所有 ChatGPT 或其他 AI 引荐都有相同标签**，更不能把全部 Direct 流量算成 AI 流量。[OpenAI 当前爬虫文档](https://developers.openai.com/api/docs/bots) 介绍的是抓取和发现策略，不能据此推断每次浏览器引荐的归因。
 - CDN / 服务端日志中的爬虫请求不是用户 Session 或 AI 引用；GSC 的 AI 曝光也不代表实际点击与收入。
 - 产品各自定义关键行为，例如已验证的资源下载、完成研究任务或真实支付；需要校验事件去重和归因限制，并将收入与成本分开衡量。
 - 按现有产品技术栈与分析问题选择工具，**不需要因为清单列出三个平台就全部接入**。
