@@ -1,8 +1,8 @@
 blank_issues_enabled: false
 contact_links:
-  - name: 💡 Suggest a resource
-    url: https://github.com/bmpi-dev/awesome-seo/pulls
-    about: Please open a Pull Request (using the PR template) to suggest a new resource. Read CONTRIBUTING.md first.
-  - name: 📖 Read the contribution guidelines
-    url: https://github.com/bmpi-dev/awesome-seo/blob/main/CONTRIBUTING.md
-    about: Before submitting, please read the contribution guidelines to understand the inclusion criteria.
+  - name: Read the curation and contribution policy
+    url: https://github.com/i365dev/awesome-seo/blob/main/CONTRIBUTING.md
+    about: This is a curated reference, not an open directory for tool submissions or backlink requests.
+  - name: Submit a correction
+    url: https://github.com/i365dev/awesome-seo/pulls
+    about: Pull requests fixing broken links or improving existing resources are welcome; unsolicited vendor listings are not.
