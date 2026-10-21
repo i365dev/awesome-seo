@@ -206,6 +206,29 @@ The resources below prioritize official search-engine tools, mature open-source 
 
 **Practical distinction:** *search crawlers*, *model-training crawlers*, and *user-directed browser/agent sessions* are different actors. A bot fetch is not a human referral; browser analytics generally does not measure crawler traffic. Never bypass login, privacy, abuse prevention, or payment controls to improve purported “AI friendliness.”
 
+### If your site uses Cloudflare or another CDN/WAF
+
+**robots.txt and edge security are different controls.** A crawler allowed by robots.txt can still receive a Cloudflare 403/429, challenge page, or other unusable response. Likewise, allowing a crawler through the WAF does not override its robots.txt obligations. Audit both layers rather than assuming a public page is machine-accessible.
+
+[Cloudflare: AI bot policies](https://developers.cloudflare.com/bots/additional-configurations/block-ai-bots/)
+> Cloudflare distinguishes **Search, Agent, and Training** behavior. New-domain defaults introduced September 15, 2026 keep Search allowed but restrict Training and Agent on pages with ads; mixed-purpose bots may also be blocked by training policies. Check each zone's **actual** settings; existing domains and configurations may differ.
+
+[Cloudflare: managed robots.txt](https://developers.cloudflare.com/bots/additional-configurations/managed-robots-txt/)
+> Cloudflare's Bot Preference Sync can **prepend managed rules** to an existing robots.txt, based on the zone's policies. Read the **final public** `https://your-domain.example/robots.txt`, not just the file in Git, and check for conflicts.
+
+[Cloudflare: AI Crawl Control](https://developers.cloudflare.com/ai-crawl-control/get-started/)
+> Review **AI Crawl Control → Crawlers / Directives** for request outcomes and robots policy. On Free plans, crawler recognition is primarily user-agent based; don't treat this dashboard as independently verified attribution.
+
+[Cloudflare: bot false positives](https://developers.cloudflare.com/bots/troubleshooting/false-positives/)
+> Bot Fight Mode can challenge legitimate clients and **cannot be skipped with a WAF custom rule**. Super Bot Fight Mode supports targeted Skip rules. Inspect **Security Events / Analytics** before changing protections.
+
+**Minimal audit for a public content page:**
+1. Decide whether you want **AI search discovery**, **user-directed agent access**, and/or **training** independently. For example, OpenAI documents allowing `OAI-SearchBot` for search while disallowing `GPTBot` for training.
+2. Fetch the public `/robots.txt` and sitemap over your **real CDN hostname**. Check effective policies and Cloudflare-generated directives. Ensure public article/asset-detail URLs return meaningful text and a canonical URL, without requiring login or Turnstile.
+3. Check Cloudflare **Security Events** and AI Crawl Control for actual requests from identified bots: status codes, blocked/challenged decisions, and the precise host/path. A `curl -A "OAI-SearchBot"` probe checks only the declared user agent and **does not prove** how the authentic verified crawler is treated.
+4. Resolve unintended challenges **only for known-good traffic on public read-only paths**. Do not broadly bypass protections for every user agent claiming to be a search bot; keep downloads, paid content, APIs, and write actions behind their original authorization and anti-abuse controls.
+5. Recheck after changes to DNS proxy/CDN, robots.txt, WAF, or bot settings. Record actual fetch responses rather than assuming a configuration toggle guarantees indexing or referrals.
+
 ## Chrome Plugins
 
 [SimilarWeb](https://chrome.google.com/webstore/detail/similarweb-traffic-rank-w/hoklmmgfnpapgjgcpechhaamimifchmp)
