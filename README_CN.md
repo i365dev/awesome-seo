@@ -189,6 +189,37 @@ flowchart TD
 
 [spyfu](https://www.spyfu.com/)
 
+## AI 搜索、GEO 与 Agent 可访问性
+
+**GEO（生成式搜索优化）**首先是内容可发现性、可理解性与效果衡量问题，不是取代 SEO 的新排名秘诀，更不能保证被模型引用。优先做好有真实价值的原创内容、稳定 URL、可访问的 HTML 文本、清晰标题与站内链接，以及与页面可见内容一致的结构化数据。
+
+### 已有明确依据的实践
+
+[Google：AI 功能与网站](https://developers.google.com/search/docs/appearance/ai-features?hl=zh-cn)
+> Google 明确说明：AI Overviews 和 AI Mode 没有额外的技术准入要求，仍应遵循常规搜索收录、可抓取性和内容质量要求。
+
+[Google：Search Console 生成式 AI 表现报告](https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports)
+> 官方报告提供生成式 AI 搜索与 Discover 中的展示次数和网页等数据；Google 称已于 2026 年 8 月 31 日面向全球网站推出。曝光不等于访问或转化。
+
+[OpenAI：爬虫官方说明](https://developers.openai.com/api/docs/bots)
+> 分别说明 `OAI-SearchBot`（ChatGPT 搜索发现）、`GPTBot`（可能用于模型训练的抓取）、`ChatGPT-User`（部分用户主动触发的访问）。不能假设同一条 robots.txt 策略能完全控制三种行为。
+
+[Anthropic：Claude 爬虫与控制策略](https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler)
+> 分别说明 `Claude-SearchBot`、`ClaudeBot` 和 `Claude-User` 的不同用途。
+
+[Google：robots.txt 指南](https://developers.google.com/search/docs/crawling-indexing/robots/intro)
+> 按目的管理抓取；robots.txt 不是鉴权、安全屏障或隐藏私密页面的方法。还应检查 CDN/WAF 的实际挑战、拒绝响应和抓取可达性。
+
+[WAI-ARIA Authoring Practices](https://www.w3.org/WAI/ARIA/apg/)
+> 清晰的按钮、表单、标签与导航语义有利于无障碍访问，也有助于浏览器 Agent 理解操作；仅添加 ARIA 并不保证 Agent 一定可用。
+
+### 实验性实践，不是必备项
+
+[llms.txt 提案](https://llmstxt.org/)
+> 自愿性的 Markdown 导航及文档索引格式，可用于明确有 Agent 消费需求的技术文档，但**并非普遍采用的搜索标准，也不是 Google 排名因素**。Google 已说明，llms.txt 对 Google 搜索可见性和排名既无正面也无负面影响。只有出现具体消费方或可衡量的使用价值时才值得额外维护。
+
+**特别区分：** *搜索爬虫*、*训练爬虫*、*用户主动触发的浏览器/Agent 访问* 是不同场景。机器人抓取不等于真人访问，浏览器 Analytics 也通常不能测量爬虫请求。不能为了所谓“AI 友好”绕过登录、隐私、反滥用或付费保护。
+
 ## Chrome插件
 
 [SimilarWeb](https://chrome.google.com/webstore/detail/similarweb-traffic-rank-w/hoklmmgfnpapgjgcpechhaamimifchmp)
@@ -264,6 +295,39 @@ flowchart TD
 [Warrior Forum](https://www.warriorforum.com/)
 
 > 以上社区我都没怎么混过，只是偶尔会看一些帖子，如果你们有好的社区可以给我PR。
+
+## 数据分析、流量归因与转化
+
+重点衡量 **发现 → 有效访问 → 产品实际使用 → 收入**。不同数据源回答不同问题，不能把 PV、爬虫请求、AI 引用、注册数和付费客户混为一谈。
+
+| 要回答的问题 | 主要证据来源 |
+| --- | --- |
+| 哪些查询和页面获得搜索曝光与点击？ | Search Console、Bing Webmaster Tools |
+| 页面是否出现在 Google 生成式 AI 搜索功能里？ | Search Console 生成式 AI 表现报告（曝光数据） |
+| 哪些访问来自浏览器引荐或带参数的链接？ | GA4、Umami 或 Mixpanel（Referrer、UTM） |
+| 用户有没有完成有价值的操作并再次使用？ | 产品自定义事件、漏斗、留存 |
+| 增长是否覆盖成本？ | 实际销售、退款与直接生产和运营成本 |
+
+### 可靠的 Analytics 工具
+
+[Google Analytics 4：流量获取报告](https://support.google.com/analytics/answer/12923437)
+> 分析流量来源、会话和关键事件。它与 Search Console 互补，不能替代搜索曝光和爬虫日志数据。
+
+[Mixpanel：漏斗分析](https://mixpanel.com/blog/introduction-to-analytics-funnel-analysis/)
+> 成熟的产品分析工具，适合衡量用户到达网站后的关键行为、转化流程与留存。
+
+[Umami](https://docs.umami.is/)
+> 可自托管的开源网站及产品分析工具，支持 Referrer、UTM、自定义事件、漏斗和归因报告。
+
+[Umami：归因分析](https://docs.umami.is/docs/attribution)
+> 可按首次点击或末次点击模型追踪某个页面或事件的流量来源；归因模型不等于因果证明。
+
+### 衡量时必须避免的误区
+
+- [OpenAI 对网站发布者的说明](https://help.openai.com/en/articles/12627856) 提到 ChatGPT 搜索引荐链接可带 `utm_source=chatgpt.com`。应结合实际 Referrer 和 UTM；**其他 AI 助手不一定使用相同标签**，部分访问也可能丢失来源。不能把全部 Direct 流量都算成 AI 流量。
+- CDN / 服务端日志中的爬虫请求不是用户 Session 或 AI 引用；GSC 的 AI 曝光也不代表实际点击与收入。
+- 产品各自定义关键行为，例如已验证的资源下载、完成研究任务或真实支付；需要校验事件去重和归因限制，并将收入与成本分开衡量。
+- 按现有产品技术栈与分析问题选择工具，**不需要因为清单列出三个平台就全部接入**。
 
 ## 流量变现
 
