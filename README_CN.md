@@ -220,6 +220,29 @@ flowchart TD
 
 **特别区分：** *搜索爬虫*、*训练爬虫*、*用户主动触发的浏览器/Agent 访问* 是不同场景。机器人抓取不等于真人访问，浏览器 Analytics 也通常不能测量爬虫请求。不能为了所谓“AI 友好”绕过登录、隐私、反滥用或付费保护。
 
+### Cloudflare / CDN 托管网站的检查方法
+
+**robots.txt 和 CDN/WAF 安全规则是两层独立控制。** 即使 robots.txt 允许爬虫访问，Cloudflare 仍可能返回 403/429、挑战页面或其他无法使用的响应；反过来，WAF 放行也不能代替 robots.txt 的规则。公开网页不等于爬虫一定能正常访问。
+
+[Cloudflare：AI Bot 策略](https://developers.cloudflare.com/bots/additional-configurations/block-ai-bots/)
+> Cloudflare 按 **Search、Agent、Training** 三种用途分类。2026 年 9 月 15 日开始的新域名默认策略允许 Search，但在广告页面限制 Training 和 Agent；兼具训练用途的混合爬虫也可能被训练禁用规则阻挡。应检查**当前域名的实际配置**，旧域名不一定采用新默认值。
+
+[Cloudflare：托管 robots.txt](https://developers.cloudflare.com/bots/additional-configurations/managed-robots-txt/)
+> Cloudflare 的 Bot Preference Sync 可能在源站 robots.txt **前面追加托管指令**。必须查看域名线上最终返回的 `/robots.txt`，不能只检查 Git 仓库文件。
+
+[Cloudflare：AI Crawl Control](https://developers.cloudflare.com/ai-crawl-control/get-started/)
+> 在 **AI Crawl Control → Crawlers / Directives** 检查抓取请求结果与 robots 策略。免费套餐主要根据 User-Agent 识别 AI 爬虫，不能把面板的识别结果全部当成独立验证的身份。
+
+[Cloudflare：Bot 误拦截](https://developers.cloudflare.com/bots/troubleshooting/false-positives/)
+> Bot Fight Mode 可能误拦合法客户端，而且**无法用 WAF 自定义 Skip 规则绕过**；Super Bot Fight Mode 支持限定范围的 Skip。修改安全设置前应先查看 **Security Events / Analytics**。
+
+**公开内容页面的最小检查：**
+1. 分别决定是否允许 **AI 搜索发现**、**用户主动触发的 Agent 访问**与**训练**。例如 OpenAI 官方明确支持允许 `OAI-SearchBot` 用于搜索，同时通过 robots.txt 禁止 `GPTBot` 用于训练。
+2. 经真实的 **CDN 网站域名**读取 `/robots.txt`、Sitemap 和公开文章/资源详情页，核对托管规则、Canonical 和实际 HTML 文本。公开内容不应因登录或 Turnstile 无法读取。
+3. 查看 Cloudflare **Security Events** 与 AI Crawl Control，分析已识别爬虫的请求、状态码、拦截/挑战事件、域名与路径。用 `curl -A "OAI-SearchBot"` 只能模拟 User-Agent，**不能证明真实已验证爬虫会得到同样的处理**。
+4. 仅在**已确认的可信爬虫和公开只读路径**上排除误拦截；不要依据任何人都能伪造的 User-Agent 全站关闭安全规则。下载、付费内容、API 和写入操作继续保留鉴权与反滥用保护。
+5. DNS 代理、CDN、robots.txt、WAF 或 Bot 设置修改后重新核查真实 HTTP 响应。允许抓取也不保证索引、AI 引用或引荐流量。
+
 ## Chrome插件
 
 [SimilarWeb](https://chrome.google.com/webstore/detail/similarweb-traffic-rank-w/hoklmmgfnpapgjgcpechhaamimifchmp)
