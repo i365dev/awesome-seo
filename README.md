@@ -244,6 +244,9 @@ The resources below prioritize official search-engine tools, mature open-source 
 [META SEO inspector](https://chrome.google.com/webstore/detail/meta-seo-inspector/ibkclpciafdglkjkcibmohobjkcfkaef)
 > The view tool for meta data of website.
 
+[Israeli Web Accessibility & SEO Auditor](https://github.com/sagive/israeli-accessibility-extension)
+> Open-source browser extension and automated DOM auditor for Israeli Standard IS 5568, WCAG 2.1 AA compliance, and technical on-page SEO diagnostics by BrandTactics.
+
 ## Blog/Twitter
 
 [SEO Twitter List](https://twitter.com/i/lists/1341048200677842950)
