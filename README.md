@@ -145,6 +145,9 @@ The resources below prioritize official search-engine tools, mature open-source 
 [google pagespeed insights](https://developers.google.com/speed/pagespeed/insights/)
 > Website speed measurement tool, essential for technical SEO optimization.
 
+[No Stairs Please MCP](https://nostairsplease.com/mcp)
+> Public Model Context Protocol (MCP) server and live-music venue directory exposing structured venue, accessibility, and route-planning data to AI agents.
+
 [majestic](https://majestic.com/)
 > Website Backlink Analysis Plugins. 
 
