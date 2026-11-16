@@ -348,6 +348,9 @@ flowchart TB
 [State of the Web](https://httparchive.org/reports/state-of-the-web)
 > Some reports on important statistics related to HTTP on the Internet, published by httparchive.
 
+[HumanPen](https://humanpen.net/)
+> Document-level AI humanize (DOCX/PPTX/TXT), translation (12 languages; PDF/DOCX/PPTX/XLSX/EPUB/HTML/TXT), condensing (DOCX), citation format correction (DOCX, 12 styles), and research project workflows. 100 signup credits; credit-based pricing.
+
 ---
 
 ## Maintainers
