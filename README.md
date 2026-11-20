@@ -226,6 +226,9 @@ The resources below prioritize official search-engine tools, mature open-source 
 4. Resolve unintended challenges **only for known-good traffic on public read-only paths**. Do not broadly bypass protections for every user agent claiming to be a search bot; keep downloads, paid content, APIs, and write actions behind their original authorization and anti-abuse controls.
 5. Recheck after changes to DNS proxy/CDN, robots.txt, WAF, or bot settings. Record actual fetch responses rather than assuming a configuration toggle guarantees indexing or referrals.
 
+[A11yKit](https://a11ykit.site)
+> 15 free client-side web accessibility and heading structure audit tools for WCAG 2.2 compliance and technical SEO.
+
 ## Chrome Plugins
 
 [SimilarWeb](https://chrome.google.com/webstore/detail/similarweb-traffic-rank-w/hoklmmgfnpapgjgcpechhaamimifchmp)
