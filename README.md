@@ -125,6 +125,9 @@ The resources below prioritize official search-engine tools, mature open-source 
 [Screaming Frog SEO Spider](https://www.screamingfrog.co.uk/seo-spider/)
 > Established desktop crawler for technical SEO, including broken links, redirects, and metadata; the free version crawls up to 500 URLs per run.
 
+[FieldOS Website Grader](https://8083-agq6pwimmres4jrl6zkmx2vqtu.instabox.tech/grader)
+> Free instant website grader. Enter any URL for a 0-100 score across 12 mobile, speed, SEO, contact and social checks with prioritized fixes. No signup.
+
 ### Other established tools
 
 [advertools](https://github.com/eliasdabbas/advertools)
