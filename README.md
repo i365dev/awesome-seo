@@ -201,6 +201,9 @@ The resources below prioritize official search-engine tools, mature open-source 
 [llms.txt proposal](https://llmstxt.org/)
 > A voluntary proposal for machine-readable Markdown navigation and linked documentation. It may be useful for agent-facing technical docs, but is **not** a universally adopted search standard or a Google ranking requirement. Google explicitly says llms.txt has no positive or negative impact on Google Search visibility. Maintain it only if a specific consumer or measurable use case justifies the extra content.
 
+[2026 Top 50 AI & Dev SaaS /llms.txt, AI Crawler & Schema.org Empirical Benchmark](https://zcoldwater.github.io/citeready-cli/ai-search-readiness-benchmark-2026.html)
+> Reproducible empirical snapshot (MIT open-source CLI and public JSON dataset) measuring 50 developer and AI SaaS domains across `robots.txt` rules for 10 AI bots, Schema.org JSON-LD entity graphs, `/llms.txt` (74% adoption), and `/llms-full.txt` (22% adoption). Useful as a factual baseline rather than a ranking claim.
+
 **Practical distinction:** *search crawlers*, *model-training crawlers*, and *user-directed browser/agent sessions* are different actors. A bot fetch is not a human referral; browser analytics generally does not measure crawler traffic. Never bypass login, privacy, abuse prevention, or payment controls to improve purported “AI friendliness.”
 
 ### If your site uses Cloudflare or another CDN/WAF
