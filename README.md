@@ -270,9 +270,6 @@ The resources below prioritize official search-engine tools, mature open-source 
 [Harris](https://www.yesharris.com/learning-seo-menu/)(Chinese Blog)
 > About SEO Timeliness.
 
-[SEO前线](http://seoqx.com/)(Chinese Blog)
-> Author: noname. He main research Baidu SEO.
-
 [Other](https://ahrefs.com/blog/seo-blogs/)
 > Collected by ahrefs.
 
