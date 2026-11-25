@@ -295,10 +295,6 @@ flowchart TD
 
 > SEO知识时效性强的台湾博客。
 
-[SEO前线](http://seoqx.com/)
-
-> 对百度SEO很有研究的noname大佬的博客。
-
 [其他SEO相关博客](https://ahrefs.com/blog/seo-blogs/)
 
 > ahrefs整理的其他SEO相关的博客。
