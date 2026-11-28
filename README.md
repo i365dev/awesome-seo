@@ -125,6 +125,15 @@ The resources below prioritize official search-engine tools, mature open-source 
 [Screaming Frog SEO Spider](https://www.screamingfrog.co.uk/seo-spider/)
 > Established desktop crawler for technical SEO, including broken links, redirects, and metadata; the free version crawls up to 500 URLs per run.
 
+[The SEO Agent](https://www.theseoagent.ai/)
+> Automated technical SEO audits, 30-day keyword planning, and CMS article publishing for founders and SaaS sites.
+
+[White Label SEO Report](https://whitelabelseoreport.com/)
+> Free rule-based site auditor checking up to 9 pages across 14 technical SEO checks with printable PDF export.
+
+[Generative Engine Optimization Checker](https://generativeengineoptimizationservice.com/)
+> Free rule-based checker that inspects robots.txt AI crawler access, structured data, and citation readiness.
+
 ### Other established tools
 
 [advertools](https://github.com/eliasdabbas/advertools)
